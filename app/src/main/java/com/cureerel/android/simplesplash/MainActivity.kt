@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
+import com.cureerel.android.simplesplash.jetpackcompose.HomeScreen
 import com.cureerel.android.simplesplash.ui.theme.SimplesplashTheme
 
 class MainActivity : ComponentActivity() {
@@ -44,12 +45,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SimplesplashTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                // link a page (import with Package) : import com.cureerel.android.simplesplash.jetpackcompose.HomeScreen
+                    HomeScreen()
             }
         }
     }
