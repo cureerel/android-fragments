@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
         }
 
         // splash screen state
-        installSplashScreen().apply {
+        val splashScreen = installSplashScreen().apply {
             setKeepOnScreenCondition { splashScreenViewModel.isSplashScreenVisible.value }
             setOnExitAnimationListener { splash ->
                 val rotationAnimator = ValueAnimator.ofFloat(0f, 90f)
@@ -41,7 +41,10 @@ class MainActivity : ComponentActivity() {
                 rotationAnimator.start()
             }
         }
+
+
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContent {
             SimplesplashTheme {
@@ -52,6 +55,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+//  this taking argumnets so it won't be used directly for preview
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -60,10 +65,3 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SimplesplashTheme {
-        Greeting("Android")
-    }
-}
