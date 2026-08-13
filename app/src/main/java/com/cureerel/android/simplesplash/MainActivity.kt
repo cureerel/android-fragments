@@ -10,11 +10,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
+import com.cureerel.android.simplesplash.jetpackcompose.HobbitScreen
 import com.cureerel.android.simplesplash.jetpackcompose.HomeScreen
 import com.cureerel.android.simplesplash.ui.theme.SimplesplashTheme
 
@@ -48,8 +53,20 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SimplesplashTheme {
-                // link a page (import with Package) : import com.cureerel.android.simplesplash.jetpackcompose.HomeScreen
-                    HomeScreen()
+
+                var showHobbit by remember {
+                    mutableStateOf(false)
+                }
+
+                if (showHobbit) {
+                    HobbitScreen()
+                } else {
+                    HomeScreen(
+                        onHobbitClick = {
+                            showHobbit = true
+                        }
+                    )
+                }
             }
         }
     }

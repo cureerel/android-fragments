@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.CheckboxDefaults.colors
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.runtime.getValue
@@ -36,7 +37,10 @@ import androidx.compose.ui.unit.dp
 
 // make a page
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    // take from MainActivity for pagination
+    onHobbitClick: () -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -49,8 +53,13 @@ fun HomeScreen() {
         TextFieldExample()
         Spacer(modifier = Modifier.height(20.dp))
         OutlinedTextFieldExample()
+        Spacer(modifier = Modifier.height(20.dp))
+        Button(
+            onClick = onHobbitClick
+        ) {
+            Text("Move ahead")
+        }
     }
-
 }
 
 
