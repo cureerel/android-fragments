@@ -3,6 +3,24 @@
     android:height="48dp"
     android:viewportWidth="48"
     android:viewportHeight="48">
+
+  <group
+      android:name="settingsDot"
+      android:scaleX="2"
+      android:scaleY="2"
+      android:pivotX="5"
+      android:pivotY="5"
+      >
+
+    <path
+
+        android:fillColor="@color/splash_icon_color"
+        android:pathData="M15,13.5
+                          A1.5,1.5 0,1 0,15,16.5
+                          A1.5,1.5 0,1 0,15,13.5" />
+
+  </group>
+
   <group
       android:name="settings"
       android:scaleY="0.3"
