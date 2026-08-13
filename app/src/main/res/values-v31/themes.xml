@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.FacebookSplashScreen" parent="Theme.SplashScreen">
+<!--        <item name="android:windowSplashScreenAnimatedIcon">@drawable/icon_facebook2</item>-->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/animation_holder</item>
+        <item name="android:windowSplashScreenBackground" >@color/splash_background_color</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/icon_meta</item>
+        <item name="postSplashScreenTheme" > @style/Theme.Simplesplash </item>
+    </style>
+</resources>
